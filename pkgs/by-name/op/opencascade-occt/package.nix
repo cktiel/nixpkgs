@@ -19,13 +19,13 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "opencascade-occt";
-  version = "7.9.3";
+  version = "8.0.2";
 
   src = fetchFromGitHub {
     owner = "Open-Cascade-SAS";
     repo = "OCCT";
     tag = "V${builtins.replaceStrings [ "." ] [ "_" ] finalAttrs.version}";
-    hash = "sha256-Zp4m+f1wrzynoCrzIwvYELUXsY/NQIBY+HFk5UteufI=";
+    hash = "sha256-i5C/fGwAaqTY1kAZil5MjIx9Okz7Mzo7ZmzpNmXI5x8=";
   };
 
   patches = lib.optionals (lib.versionOlder finalAttrs.version "7.9") [
